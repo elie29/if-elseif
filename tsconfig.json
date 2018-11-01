@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "commonjs", // to be run with node
+    "target": "es5",
+    "allowJs": true,
+    "noEmitOnError": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "node", // as we are using node_modules
+    // List of library files to be included in the compilation
+    "lib": [
+      "es5",
+      "dom"
+    ]
+  }
+}

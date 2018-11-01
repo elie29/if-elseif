@@ -1,0 +1,15 @@
+{
+  "name": "if-elseif",
+  "version": "1.0.0",
+  "description": "refactoring if elseif",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run clean && tsc && node dist/app.js",
+    "clean": "rimraf dist"
+  },
+  "author": "Elie NEHME",
+  "license": "ISC",
+  "dependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
