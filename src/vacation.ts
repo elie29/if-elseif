@@ -8,31 +8,31 @@ export class Vacation {
 
     return Math.max(
       25,
-      this.level1,
-      this.level2,
-      this.level3,
-      this.level4,
-      this.level5
+      this.numberOfDaysOffForLevel1,
+      this.numberOfDaysOffForLevel2,
+      this.numberOfDaysOffForLevel3,
+      this.numberOfDaysOffForLevel4,
+      this.numberOfDaysOffForLevel5
     );
   }
 
-  protected get level1(): number {
+  protected get numberOfDaysOffForLevel1(): number {
     return this.position > 1 || this.coefficient > 130 ? 26 : 0;
   }
 
-  protected get level2(): number {
+  protected get numberOfDaysOffForLevel2(): number {
     return this.position > 2 || this.coefficient > 180 ? 27 : 0;
   }
 
-  protected get level3(): number {
+  protected get numberOfDaysOffForLevel3(): number {
     return this.position > 3 || this.coefficient > 200 ? 28 : 0;
   }
 
-  protected get level4(): number {
+  protected get numberOfDaysOffForLevel4(): number {
     return this.position > 4 || this.coefficient > 310 ? 29 : 0;
   }
 
-  protected get level5(): number {
+  protected get numberOfDaysOffForLevel5(): number {
     return this.position > 5 || this.coefficient > 420 ? 30 : 0;
   }
 }
