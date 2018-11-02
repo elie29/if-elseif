@@ -1,23 +1,44 @@
 export class Vacation {
-  public getNumberOfDaysOff(position: number, coefficient: number): number {
-    let numberOfDaysOff = 25;
-    const level1 = position > 1 || coefficient > 130;
-    const level2 = position > 2 || coefficient > 180;
-    const level3 = position > 3 || coefficient > 200;
-    const level4 = position > 4 || coefficient > 310;
-    const level5 = position > 5 || coefficient > 420;
+  protected position = 0;
+  protected coefficient = 0;
 
-    if (level5) {
+  public getNumberOfDaysOff(position: number, coefficient: number): number {
+    this.position = position;
+    this.coefficient = coefficient;
+
+    let numberOfDaysOff = 25;
+
+    if (this.level5) {
       numberOfDaysOff = 30;
-    } else if (level4) {
+    } else if (this.level4) {
       numberOfDaysOff = 29;
-    } else if (level3) {
+    } else if (this.level3) {
       numberOfDaysOff = 28;
-    } else if (level2) {
+    } else if (this.level2) {
       numberOfDaysOff = 27;
-    } else if (level1) {
+    } else if (this.level1) {
       numberOfDaysOff = 26;
     }
     return numberOfDaysOff;
+  }
+
+  protected get level1(): boolean {
+    return this.position > 1 || this.coefficient > 130;
+  }
+
+  protected get level2(): boolean {
+    return this.position > 2 || this.coefficient > 180;
+  }
+
+  protected get level3(): boolean {
+    return this.position > 3 || this.coefficient > 200;
+  }
+
+  protected get level4(): boolean {
+    return this.position > 4 || this.coefficient > 310;
+  }
+
+  protected get level5(): boolean {
+    return this.position > 5 || this.coefficient > 420;
   }
 }
